@@ -136,6 +136,18 @@ In this exercise you will:
 1. **How do you pass a file name to a program using the `-i` and `-o` options?**
 2. **What are typical use cases for parameters versus flags? How do the differ from one another?**
 
+1. Man übergibt Dateinamen als Parameter hinter den Optionen. Beispiel:
+   ./programm -i eingabe.txt -o ausgabe.txt
+   -i steht für die Eingabedatei, -o für die Ausgabedatei. Beide Optionen erwarten jeweils einen Dateinamen als Argument.
+2. Flags haben kein Argument. Sie schalten ein Verhalten ein oder aus. Beispiele: -a, -v, -d.
+Typische Anwendung: zusätzliche Funktionen aktivieren, Debug‑Modus einschalten, Ausgabe erweitern.
+Parameter  
+Parameter besitzen ein Argument, z. B. eine Zahl, einen Text oder einen Dateinamen. Beispiele: -i datei.txt, -o output.txt, -n 5.
+Typische Anwendung: Werte übergeben, Dateien angeben, Einstellungen festlegen.
+Unterschied  
+Flags sind reine Schalter (AN/AUS).
+Parameter übergeben konkrete Werte.
+
 ---
 
 ### Task 3: Interactive Input with `scanf` & `fscanf`
@@ -187,6 +199,7 @@ In this exercise you will:
 #### Reflection Question
 
 * **Why is a run-to-completion (batch) approach often preferable to interactive input?**
+Ein Batch‑Ansatz ist oft vorzuziehen, weil das Programm ohne Unterbrechungen durchläuft, reproduzierbare Ergebnisse liefert und sich leicht automatisieren lässt. Interaktive Eingabe erfordert dagegen manuelle Eingaben, ist fehleranfälliger und verhindert eine effiziente Verarbeitung großer Datenmengen.
 
 ---
 
@@ -218,6 +231,8 @@ In this exercise you will:
 #### Reflection Question
 
 * **What is the difference between redirecting to stdin and explicitly opening a file with `fopen`?**
+Beim Redirecten auf stdin (< datei.txt) liest das Programm automatisch aus der Standard­eingabe, ohne dass im Code ein Dateiname angegeben werden muss. Das Betriebssystem ersetzt die Tastatureingabe durch den Inhalt der Datei.
+Beim Öffnen einer Datei mit fopen wird die Datei im Programm explizit geöffnet. Man muss den Dateinamen selbst übergeben, die Datei manuell öffnen, lesen und wieder schließen.
 
 ---
 
@@ -408,6 +423,11 @@ In this exercise you will:
 #### Reflection Question
 
 * **Explain in your own words what the encryption and decryption processes are doing in both ciphers.**
+Caesar‑Cipher  
+Beim Caesar‑Cipher werden Buchstaben um eine feste Anzahl von Positionen im Alphabet verschoben. Bei der Verschlüsselung wird jeder Buchstabe nach rechts verschoben, bei der Entschlüsselung entsprechend nach links. Die Struktur des Textes bleibt erhalten, aber die Zeichen ändern sich durch die Verschiebung.
+
+XOR‑Cipher  
+Beim XOR‑Cipher wird jedes Zeichen des Textes mit einem Schlüsselwert bitweise verknüpft. Die Verschlüsselung und Entschlüsselung verwenden denselben Vorgang, da ein zweites XOR mit dem gleichen Schlüssel den ursprünglichen Wert wiederherstellt. Dadurch entsteht eine einfache Form asymmetrischer Verschlüsselung, bei der die Bits des Textes durch den Schlüssel verändert werden.
 
 ---
 
